@@ -1,5 +1,7 @@
 <?php 
-	if(isset($_COOKIE['status']))
+	session_start();
+
+	if(isset($_SESSION['status']))
 	{
 ?>
 
@@ -8,9 +10,7 @@
 	<title>Test</title>
 </head>
 <body>
-	<h1>Welcome home</h1>
-	<a href="create.php"> Create New </a> | 
-	<a href="userlist.php"> User List </a> | 
+	<h1>Welcome home, <?php echo $_GET['username'];?></h1>
 	<a href="logout.php"> logout </a>
 	
 </body>
