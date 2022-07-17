@@ -1,0 +1,13 @@
+<html>
+<head>
+	<title>Name</title>
+</head>
+<body>
+	<form action="../controller/logincheck.php" method="post" enctype="">
+		Username: <input type="text" name="username" value=""/> <br>
+		Password: <input type="password" name="password" value=""/> <br>
+		<input type="submit" name="submit" value="Submit"/>
+		<a href="signup.html">Signup </a>
+	</form>
+</body>
+</html>
