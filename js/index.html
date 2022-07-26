@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Example</title>
+</head>
+<body>
+        <h1>JS example</h1>
+
+        <input type="text" name="" id="username" onkeyup="getname()" />
+        <input type="button" name="" value="Click" onclick="getname()"/>
+
+        <script>
+             a = 10;
+            // var b = 10;
+            // let c = 20;
+            // const d = 30;
+            // let student = ['alamin', 12, 'xyz@aiub.edu'];
+            // student[1];
+
+            // let f1 =  function (f2){
+            //     f2();
+            // }
+
+            // f1(function f2(){
+            //     alert('f2');
+            // });
+            
+            console.log(a);
+            document.write('test');
+
+            function change(){
+                document.getElementsByTagName('h1')[0].innerHTML = "My JS Example!";
+            }
+            function getname(){
+                let username = document.getElementById('username').value;
+                if(username == ""){
+                    document.getElementsByTagName('h1')[0].innerHTML = "Null value";
+                }else{
+                    document.getElementsByTagName('h1')[0].innerHTML = username;
+                }
+
+            }
+        </script>
+</body>
+</html>
