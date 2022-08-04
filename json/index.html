@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Example</title>
+</head>
+<body>
+        <h1 id="head">Ajax example</h1>
+
+        username: <input type="text" name="" id="username" /> <br>
+        password: <input type="password" name="" id="password" /> <br>
+        
+        <input type="button" name="" value="Click" onclick="ajax()"/>
+       
+        <script>
+           
+            function ajax(){
+                let username = document.getElementById('username').value;
+                let password = document.getElementById('password').value;
+                let user = {'username': username, 'password': password};
+                let json = JSON.stringify(user);
+
+                let xhttp = new XMLHttpRequest();
+                //xhttp.open('GET', 'userCheck.php?username='+username, true);
+                xhttp.open('POST', 'userCheck.php', true);
+                xhttp.onreadystatechange = function(){
+
+                    if(this.readyState == 4 && this.status == 200){
+                        //let json = JSON.parse(this.responseText);
+                        document.getElementById('head').innerHTML = this.responseText;
+                    }             
+                }         
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");     
+                xhttp.send('data='+json);
+            }
+        </script>
+</body>
+</html>
